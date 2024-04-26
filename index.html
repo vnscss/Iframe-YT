@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iframe Yt</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./assets/Youtube_logo.png" type="image/x-icon">
+</head>
+<body>
+    <script>
+        function formatar() {
+
+            let input = document.getElementById("input") , formatado = document.getElementById("formatado")
+            var sting = input.value;
+            let iframe , baseUrl , videoId ;
+
+            sting = sting.replace("https://" , "")
+
+
+            if( sting.includes("watch?v=")){
+                baseUrl = 'www.youtube.com'
+                videoId = sting.slice((sting.indexOf('?v=') + 3 ), sting.length)
+            }
+            else{
+                baseUrl = 'www.youtube.com'
+                videoId = sting.slice((sting.indexOf('/') + 1 ), sting.indexOf('?'))
+            }
+
+            iframe = `<iframe width="560" height="315" src="https://${baseUrl}/embed/${videoId}?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
+
+            formatado.value = `<div class="embed-responsive embed-responsive-16by9 video-container" style="text-align:center">${iframe}</div>`
+
+        }
+
+        function copiar() {
+            // Get the text field
+            let input = document.getElementById("input") , formatado = document.getElementById("formatado")
+
+            var copyText = formatado.value;
+
+
+            // Copy the text inside the text field
+            navigator.clipboard.writeText(copyText);
+
+            // Alert the copied text
+            alert("Texto copiado");
+        }
+    </script>
+    <h1>Ferramenta para extrair iframe</h1>
+    <input id="input" type="text" placeholder="Cole o URL do video">
+    <button onclick="formatar();copiar()">Formatar</button>
+    <p>Url Formatada</p>
+    <input id="formatado" type="text" placeholder="Clique em enviar para formatar">
+ 
+</body>
+</html>

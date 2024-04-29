@@ -36,16 +36,10 @@
 
             formatado.value = `<div class="embed-responsive embed-responsive-16by9 video-container" style="text-align:center">${iframe}</div>`
 
+            copiar();
         }
 
         function copiar() {
-
-            if(string === ""){
-                alert("Insira uma URL no campo")
-                return;
-            }
-
-
             // Get the text field
             let input = document.getElementById("input") , formatado = document.getElementById("formatado")
 
@@ -65,7 +59,7 @@
         <h1>Ferramenta para extrair iframe</h1>
         <div class="inputs">
             <input class="mainInput" id="input" type="text" placeholder="Cole o URL do video">
-            <button class="btn btn-primary" onclick="formatar();copiar()">Formatar</button>
+            <button class="btn btn-primary" onclick="formatar();">Formatar</button>
             <p>Url Formatada ⬇️</p>
             <input class="secondInput" id="formatado" type="text" placeholder="Clique em enviar para formatar">
         </div>

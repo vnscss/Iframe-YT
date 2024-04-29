@@ -1,0 +1,103 @@
+body{
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.article{
+    background-color: rgb(241, 241, 241);
+    border-radius: 14px;
+    height: 55vh;
+    width: 65vw;
+}
+
+h1{
+    color: rgb(87, 118, 255);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+h1{
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  margin: 40px;
+}
+
+.container{
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  width: fit-content;
+  margin-top: 60px;
+}
+
+.btn{
+  margin-right: 0.07rem;
+  margin-left: 0.07rem;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  cursor: pointer;
+  -webkit-appearance: button;
+  text-transform: none;
+  overflow: visible;
+  outline: none;
+  &:hover, &:focus{
+    text-decoration: none;
+  }
+}
+
+
+
+.btn-primary{
+    background-color: #007bff;
+    color: white;
+   &:hover{
+    background-color: #0070e7;
+    color: white;
+   }
+   &:focus{
+     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+   }
+ }
+
+ .mainInput{
+    height: 30px;
+    border-radius: 4px;
+    border-color: rgb(156, 156, 156);
+    border-style: solid;
+ }
+
+ .secondInput{
+    width: 40vw;
+    height: 20vh;
+    text-align: center;
+    border-radius: 4px;
+    border-color: rgb(156, 156, 156);
+    border-style: solid;
+ }
+
+ p{
+    font-family: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+    font-size: 18px;
+ }
+
+ .inputs{
+    text-align: center;
+ }

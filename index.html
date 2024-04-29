@@ -12,19 +12,24 @@
         function formatar() {
 
             let input = document.getElementById("input") , formatado = document.getElementById("formatado")
-            var sting = input.value;
+            var string = input.value;
             let iframe , baseUrl , videoId ;
 
-            sting = sting.replace("https://" , "")
+            string = string.replace("https://" , "")
 
 
-            if( sting.includes("watch?v=")){
+            if(string === ""){
+                alert("Insira uma URL no campo")
+                return;
+            }
+
+            if( string.includes("watch?v=")){
                 baseUrl = 'www.youtube.com'
-                videoId = sting.slice((sting.indexOf('?v=') + 3 ), sting.length)
+                videoId = string.slice((string.indexOf('?v=') + 3 ), string.length)
             }
             else{
                 baseUrl = 'www.youtube.com'
-                videoId = sting.slice((sting.indexOf('/') + 1 ), sting.indexOf('?'))
+                videoId = string.slice((string.indexOf('/') + 1 ), string.indexOf('?'))
             }
 
             iframe = `<iframe width="560" height="315" src="https://${baseUrl}/embed/${videoId}?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
@@ -34,6 +39,13 @@
         }
 
         function copiar() {
+
+            if(string === ""){
+                alert("Insira uma URL no campo")
+                return;
+            }
+
+
             // Get the text field
             let input = document.getElementById("input") , formatado = document.getElementById("formatado")
 
@@ -43,15 +55,21 @@
             // Copy the text inside the text field
             navigator.clipboard.writeText(copyText);
 
-            // Alert the copied text
-            alert("Texto copiado");
+            setTimeout(() => {
+                alert("Texto copiado");
+            }, 250);
         }
     </script>
-    <h1>Ferramenta para extrair iframe</h1>
-    <input id="input" type="text" placeholder="Cole o URL do video">
-    <button onclick="formatar();copiar()">Formatar</button>
-    <p>Url Formatada</p>
-    <input id="formatado" type="text" placeholder="Clique em enviar para formatar">
- 
+
+    <div class="article">
+        <h1>Ferramenta para extrair iframe</h1>
+        <div class="inputs">
+            <input class="mainInput" id="input" type="text" placeholder="Cole o URL do video">
+            <button class="btn btn-primary" onclick="formatar();copiar()">Formatar</button>
+            <p>Url Formatada ⬇️</p>
+            <input class="secondInput" id="formatado" type="text" placeholder="Clique em enviar para formatar">
+        </div>
+    </div>
+
 </body>
 </html>

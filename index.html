@@ -32,7 +32,7 @@
                 videoId = string.slice((string.indexOf('/') + 1 ), string.indexOf('?'))
             }
 
-            iframe = `<iframe width="560" height="315" src="https://${baseUrl}/embed/${videoId}?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
+            iframe = `<iframe width="560" height="315" src="https://${baseUrl}/embed/${videoId}?rel=0" title="YouTube video player"    sandbox="allow-scripts allow-same-origin allow-presentation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
 
             formatado.value = `<div class="embed-responsive embed-responsive-16by9 video-container" style="text-align:center">${iframe}</div>`
 
